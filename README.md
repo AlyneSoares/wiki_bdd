@@ -1,6 +1,6 @@
-#BDD AUTOMATION TEST
+# BDD AUTOMATION TEST
 
-##How to Develop the tests
+## How to Develop the tests
  This regression test is based in [TestCafé](https://devexpress.github.io/testcafe/integration) with [CucumberJS](https://github.com/cucumber/cucumber-js).
  
    A model package with files and folders organization pre-determinated is disposable [here](https://github.com/AlyneSoares/wiki_bdd/edit/master/README.md), so it's only needed to fill the gaps of information, especificals of each project.
@@ -12,7 +12,7 @@ Also you'll have other 2 folders: **"support"** and **"step_definition"**.
    Also, you'll have the folder **pages** where you will save all selectors you want. I strongly suggest using page object to organize them.
    **In "step_definitions**":  you will find the file *generalSteps.js* where most general actions of navigations can be found. You can also create and edit as you want.
 
-**##How to Run the tests**
+**## How to Run the tests**
 1. Make sure TestCafe and Cucumber are installed in your machine (read the original ReadMe bellow)
 2. Use the command: nmp install
 3. and to run the test: npm test
