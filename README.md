@@ -1,4 +1,12 @@
-(this is not my project. It's a cloned repository that I've edited to my study project)
+I've created the feature file, the page elements and added files and updates to the 'background-files' that make the magic work.  
+This READ ME below is from the mark-zero of this package. So, the repository of the project is different.
+The one you're in right now, has all files ready to create a project with as many pages you need. Also, a functional report.
+Make sure you follow the instalation of TestCafe and Cucumber.
+## To run the Wiki Test
+with in terminal open in the project folder:
+.. npm install
+.. npm run test
+watch the miracle <3
 
 # Integration of TestCafe and CucumberJS
 
