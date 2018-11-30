@@ -4,8 +4,10 @@ The one you're in right now, has all files ready to create a project with as man
 Make sure you follow the instalation of TestCafe and Cucumber.
 ## To run the Wiki Test
 with in terminal open in the project folder:
-.. npm install
-.. npm run test
+npm install
+
+npm run test
+
 watch the miracle <3
 
 # Integration of TestCafe and CucumberJS
