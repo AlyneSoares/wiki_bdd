@@ -44,6 +44,15 @@ function CustomWorld({attach, parameters}) {
         const imageConvertForCuc = imgInBase64.substring(imgInBase64.indexOf(',') + 1);
         return attach(imageConvertForCuc, 'image/png');
     };
+
+    this.consoleToReport = function (type, testCase, ...string) {
+      var blue = '\033[0;34m', yellow = '\033[0;93m',nc = '\033[0m', bold = '\033[1m';
+      string.map(function(text){
+        testCase = testCase.replace(/({string})/,`"${text}"`);
+      });
+
+      console.warn(`\n ${blue} ${bold} run steps: ${nc} ${yellow} [${type.toUpperCase()}]  ${nc} ${testCase}`);
+  }
 }
 
 setWorldConstructor(CustomWorld);

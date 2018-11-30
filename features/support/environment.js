@@ -21,14 +21,14 @@ const Environment = {
 
     switch(env) {
       case this.TEST:
-        _instance.url = 'https://www.wikipedia.org/';
-        _instance.user = 'adriano.zanette@objectedge.com';
-        _instance.password = '124124124';
+        _instance.url = 'https://www.google.com/';
+        _instance.user = ' m';
+        _instance.password = '1 ';
       break;
 
       case this.STAGE:
-        _instance.url = 'https://ccstore-stage-zd9a.oracleoutsourcing.com/';
-        _instance.user = 'adriano.zanette@objectedge.com';
+        _instance.url = 'https://www. .com/';
+        _instance.user = ' ';
         _instance.password = '124124124';
       break;
 

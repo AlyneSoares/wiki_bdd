@@ -10,13 +10,9 @@ exports.selectors = {
     searchBox: function() {
         return select('#searchInput');
     },
-    // pageTitle: function() {
-    //     return select('#firstHeading');
-    // },
 
-    getTitle: function() {
-        const title = Selector('#firstHeading.firstHeading').with({boundTestRun: testController});
-        return this.getTitle();
+    pageTitle: function() {
+        return select('#firstHeading');
       },
 
     searchButton: function() {
