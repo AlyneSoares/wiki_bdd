@@ -49,7 +49,7 @@ The stories tell whats the context, the actions and whats expected, divided by "
 It means that the user context is that the account is valid and it is logged; also that the user has a banana in the cart; so when the test run we understand that this is the situation to beginthe test.
 
 **When** is the action:
-> _**When** I 'increase the product'_  
+> _**When** I 'click the increase the product'_  
 > _**When** I click 'the logout button'_
 
 Those are steps of actions. This is how the cucumber knows what is the sequences that reproduce the story/ test case. 
