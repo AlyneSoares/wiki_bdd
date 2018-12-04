@@ -1,35 +1,69 @@
 # BDD AUTOMATION TEST
 
-## How to Develop the tests
- This regression test is based in [TestCafé](https://devexpress.github.io/testcafe/integration) with [CucumberJS](https://github.com/cucumber/cucumber-js).
+This is a functional model.  
+to learn how it works, make sure you have [TestCafé](https://github.com/DevExpress/testcafe) with [CucumberJS](https://github.com/cucumber/cucumber-js) installed.  
+
+In a terminal you open the root folder of the model and run  
+> & npm install
+
+So it creates a new folder **"node_modules"**. 
+Then run   
+> $ npm test
+
+_Shazam!_
+
+You can see a full project with more features, pages and steps in the first OE BDD test, in [Logicalis](https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression) regression tests.
+
+## How to Code the tests 
+Within [this repo](https://github.com/AlyneSoares/wiki_bdd/edit/master/README.md) as it's presented, you only need to fill the gaps of information and especification of your own project, like selectors and features to make a new one and run.
  
-   A model package with files and folders organization pre-determinated is disposable [here](https://github.com/AlyneSoares/wiki_bdd/edit/master/README.md), so it's only needed to fill the gaps of information, especificals of each project.
-   
-   The structure of the folders is the Ghenkis engine format, so the folder's names and ordenation are fixed:
-In the folder **"features"** you will save the *.feature* files, where the scenarios and test cases will be.
-Also you'll have other 2 folders: **"support"** and **"step_definition"**.
-   **In "suport":** some files that make the test run: just let them do their job. But, you will have to update 'environment" with the url you want to work on.
-   Also, you'll have the folder **pages** where you will save all selectors you want. I strongly suggest using page object to organize them.
-   **In "step_definitions**":  you will find the file *generalSteps.js* where most general actions of navigations can be found. You can also create and edit as you want.
+ ### The Project Structure:
+ The structure of the folders is the Ghenkis engine format, so the folder's names and ordination are fixed.
+
+There are two .json files to read and edit, if you need:  
+* *package.json* - It has the commands to run the test in different browsers, commands to play part of them and to run in different enviroments;  
+* *env.json* - It's where you determine the urls to play your tests  
+
+The folders of the package:  
+* features - *Here is where the features files will be*
+  * step_definitions - *You will find the file generalSteps.js where most general actions of navigations can be found. You can also create and edit as you want.*
+  * support - *Where the support files to cucumber run, and the folder pages stay*
+    * pages - *Where the files with the page elements are*
+* reports - *Where the files to automation report and the folder to save the screenshots stay*
+
+The files **".features"** you will save the scenarios and test cases.
+
 
 ## How to Run the tests
-1. Make sure TestCafe and Cucumber are installed in your machine (read the original ReadMe bellow)
-2. Use the command: nmp install
-3. and to run the test: npm test
+1. Make sure TestCafe and Cucumber are installed in your machine
+2. Use the command: npm install
+3. Run the test: npm test (or use the commands in package.json to change browser, environment and chose the feature you want to run)
 
-##Now the original Readme
+### A little reading about BDD
+BDD means Behavior Driven Development, so as the name says, it's a method of development.  
+The stories are written under a role view, like a visitor, a user, the administrator.  
+The stories tell whats the context, the actions and whats expected, divided by "Given/ When/ Then" commands.
 
-### Integration of TestCafe and CucumberJS
+**Given** is the statement to the situation:  
+> _**Given** I logged in;_  
+> _**Given** I have a banana in my cart_
 
-This is a demonstration of integration [TestCafé](https://github.com/DevExpress/testcafe) into [CucumberJS](https://github.com/cucumber/cucumber-js) tests using TestCafe and Cucumber.
+It means that the user context is that the account is valid and it is logged; also that the user has a banana in the cart; so when the test run we understand that this is the situation to beginthe test.
 
-Big thank you to [helen-dikareva](https://github.com/helen-dikareva/) for your help in starting the integration with your [repo](https://github.com/helen-dikareva/testcafe-cucumber-demo). This is a fork of all of the hard work you've put in. 
+**When** is the action:
+> _**When** I 'increase the product'_  
+> _**When** I click 'the logout button'_
 
-Also, thanks to the team at [TestCafé](https://github.com/DevExpress/testcafe) for allowing testers to break away from Selenium.
+Those are steps of actions. This is how the cucumber knows what is the sequences that reproduce the story/ test case. 
 
-**Depreciation Notice** - [There are talks to officially support the Gherkin syntax in TestCafé](https://github.com/DevExpress/testcafe/issues/1373#issuecomment-291526857). Once those changes are in place I will no longer support this repo. Please voice your support of these changes becoming native to TestCafé.
+**Then** is the result:
+> _**Then** I should see the 'spinner'_  
+> _**Then** I should see 'welcome' in the page title_
 
-## Versions
+This is what you are expecting to happen.
+
+
+## This repo versions
 <table>
 <tr>
     <td>TestCafé</td>
@@ -41,42 +75,4 @@ Also, thanks to the team at [TestCafé](https://github.com/DevExpress/testcafe) 
 </tr>
 </table>
 
-## Installation 
-
-1. Make sure [Node.js](https://nodejs.org/) is installed
-2. Navigate to the root of the repo
-3. Use the `npm install` command
-
-## Running tests
-
-### Windows
-You can run tests by executing the `.\node_modules\.bin\cucumber-js.cmd` or `npm test` commands in command prompt
-
-### Mac or Linux
-You can run tests by executing `node_modules/cucumber/bin/cucumber-js`
-
-## Documentation
-* [Initial Setup](https://github.com/rquellh/testcafe-cucumber/wiki/Initial-Setup)
-  * [Debuging in VSCode](https://github.com/rquellh/testcafe-cucumber/wiki/Debugging-in-VSCode)
-* [Using TestCafé](https://github.com/rquellh/testcafe-cucumber/wiki/Using-TestCafe)
-  * [Creating your first test](https://github.com/rquellh/testcafe-cucumber/wiki/Creating-your-first-test)
-  * [Selectors](https://github.com/rquellh/testcafe-cucumber/wiki/Selectors)
-  * [Actions](https://github.com/rquellh/testcafe-cucumber/wiki/Actions)
-  * [Assertions](https://github.com/rquellh/testcafe-cucumber/wiki/Assertions)
-* [TestCafé & CucumberJS](https://github.com/rquellh/testcafe-cucumber/wiki/TestCafe-&-CucumberJS)
-  * [Helpful VSCode Setup](https://github.com/rquellh/testcafe-cucumber/wiki/Helpful-VSCode-Setup)
-  * [Creating Features](https://github.com/rquellh/testcafe-cucumber/wiki/Creating-Features)
-  * [Creating Step Definitions](https://github.com/rquellh/testcafe-cucumber/wiki/Creating-Step-Definitions)
-  * [Adding TestCafé Functionality to Cucumber steps](https://github.com/rquellh/testcafe-cucumber/wiki/Adding-TestCafe-Functionality-to-Cucumber-steps)
-  * [Harnessing Cucumber's Power](https://github.com/rquellh/testcafe-cucumber/wiki/Harnessing-Cucumber's-Power)
-  * [Page Object](https://github.com/rquellh/testcafe-cucumber/wiki/Page-Object)
-  * [Running Tests](https://github.com/rquellh/testcafe-cucumber/wiki/Running-Tests)
-  * [Reporting and Taking Screenshots](https://github.com/rquellh/testcafe-cucumber/wiki/Reporting-and-Taking-Screenshots)
-
-## Notes
-
-* As of the time I am writting this, there is only 1 passing test of 3. I decided to not make all of the tests passing, so you could see how failures are handled. 
-
-* My solution closes the TestCafé browser between each scenario. I tried to keep it open between scenarios but had trouble with handling failures. If you find a solution, I'd like to know.
-
-* With TestCafé version 0.19.0, you no longer have to manually update stack-chain. Thank you to the TestCafé crew for making the integration much easier.
+## Now, go work the magic and good tests!
