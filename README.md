@@ -12,10 +12,8 @@ Then run
 
 _Shazam!_
 
-You can see a full project with more features, pages and steps in the first OE BDD test, in [Logicalis](https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression) regression tests.
-
 ## How to Code the tests 
-Within [this repo](https://github.com/AlyneSoares/wiki_bdd/edit/master/README.md) as it's presented, you only need to fill the gaps of information and especification of your own project, like selectors and features to make a new one and run.
+Within [this repo](https://github.com/AlyneSoares/wiki_bdd) as it's presented, you only need to fill the gaps of information and especification of your own project, like selectors and features to make a new one and run.
  
  ### The Project Structure:
  The structure of the folders is the Ghenkis engine format, so the folder's names and ordination are fixed.
