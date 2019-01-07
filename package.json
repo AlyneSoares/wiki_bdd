@@ -1,7 +1,7 @@
 {
-  "name": "Logicalis",
+  "name": "Wiki",
   "version": "0.1.0",
-  "description": "Automated Regression Tests",
+  "description": "Model Tests",
   "author": "Alyne MR Soares <lynemr@gmail.com>",
   "contributors": [
     "Lucas Pellisoli"
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression"
+    "url": "https://github.com/AlyneSoares/wiki_bdd"
   },
   "scripts": {
     "debug": "node --inspect=1337 --debug-brk --nolazy node_modules/cucumber/bin/cucumber-js --tags @debug --format json:./reports/report.json",
