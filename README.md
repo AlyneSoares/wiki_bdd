@@ -54,6 +54,9 @@ to learn how it works, make sure you have testcafe and cucumber installed.
    * Validate Cucumber version:
    > `$ cucumber -v`   
 
+**5) Install Cucumber**
+* You must edit the environment.js to the desired URL, users and password config.
+
 _Shazam!_
  
  ### The Project Structure:
