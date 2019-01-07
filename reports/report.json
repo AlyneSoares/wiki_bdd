@@ -1,18 +1,18 @@
 [
   {
-    "description": "    I want to search and confirm thepage title",
+    "description": "  I want to search for PRODUCTS and add to my cart",
     "keyword": "Feature",
-    "name": "Search for Metallica",
+    "name": "Cart - elements confirmations and functions",
     "line": 1,
-    "id": "search-for-metallica",
+    "id": "cart---elements-confirmations-and-functions",
     "tags": [],
-    "uri": "features/searchMetallica.feature",
+    "uri": "features/cart.feature",
     "elements": [
       {
-        "id": "search-for-metallica;search-for-metallica",
+        "id": "cart---elements-confirmations-and-functions;i-change-a-product-quantity-by-typing",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "Search for Metallica",
+        "line": 94,
+        "name": "I change a product quantity by typing",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -20,96 +20,238 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:48"
+              "location": "features/support/hooks.js:47"
             },
             "result": {
               "status": "passed",
-              "duration": 8108000000
+              "duration": 6781000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "I open the Google page",
+            "name": "I open the OCC page",
             "match": {
-              "location": "features/step_definitions/general-steps.js:8"
+              "location": "features/step_definitions/login.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 12654000000
+              "duration": 14825000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 6,
-            "name": "I type \"wiki Metallica\" in the \"searchBoxGoogle\"",
+            "name": "I type my user email",
             "match": {
-              "location": "features/step_definitions/general-steps.js:24"
+              "location": "features/step_definitions/login.js:11"
             },
             "result": {
               "status": "passed",
-              "duration": 777000000
+              "duration": 3815000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 7,
-            "name": "I click the \"searchButtonGoogle\"",
+            "name": "I type my password",
             "match": {
-              "location": "features/step_definitions/general-steps.js:14"
+              "location": "features/step_definitions/login.js:15"
             },
             "result": {
               "status": "passed",
-              "duration": 3191000000
+              "duration": 1245000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 8,
-            "name": "I click the \"searchResult\"",
+            "name": "I click the \"submitLoginButton\"",
             "match": {
-              "location": "features/step_definitions/general-steps.js:14"
+              "location": "features/step_definitions/generalSteps.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 2483000000
+              "duration": 1646000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I wait \"8\" seconds",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8025000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I have no products in my cart",
+            "match": {
+              "location": "features/step_definitions/searchAndAddToCart.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3906000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I have a product in my cart",
+            "match": {
+              "location": "features/step_definitions/searchAndAddToCart.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12709000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I click the \"expandMiniCartIcon\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 838000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I wait \"4\" seconds",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4025000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I click the \"viewCartButton\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3179000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I wait \"4\" seconds",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4003000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 95,
+            "name": "I click the \"productQuantityInCart\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 15000000,
+              "error_message": "TypeError: selectors[keySelector] is not a function\n    at CustomWorld.<anonymous> (/home/objectedge/git/logicalis/tests/regression/features/step_definitions/generalSteps.js:9:54)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 96,
+            "name": "I press the \"backspace\" key",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:38"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 97,
+            "name": "I type \"5\" in the \"productQuantityInCart\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:22"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 98,
+            "name": "I click the \"productPriceInCart\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:7"
+            },
+            "result": {
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 9,
-            "name": "I should see \"Metallica\" in the \"pageTitle\"",
+            "line": 99,
+            "name": "I should see \"5\" in the \"productQuantityInCart\"",
             "match": {
-              "location": "features/step_definitions/general-steps.js:48"
+              "location": "features/step_definitions/generalSteps.js:53"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/support/hooks.js:63"
             },
             "result": {
               "status": "passed",
-              "duration": 2224000000
+              "duration": 8000000
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:62"
+              "location": "features/support/hooks.js:59"
             },
             "result": {
-              "status": "passed"
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "match": {
-              "location": "features/support/hooks.js:57"
-            },
-            "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 5000000
             }
           }
         ]
