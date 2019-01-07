@@ -54,9 +54,10 @@ to learn how it works, make sure you have testcafe and cucumber installed.
    * Validate Cucumber version:
    > `$ cucumber -v`   
 
-**5) Install Cucumber**
+**5) Configure Environment**
 * You must edit the environment.js to the desired URL, users and password config.
-* You also must edit index.js to config or delet as you wish (29 const allowedEnvironments = ['google', 'googlebr', 'googleau'];)
+* You also must edit index.js to config or delete as you wish the line 29: `const allowedEnvironments = ['google', 'googlebr', 'googleau'];)`
+* You also must configure the file env.json; that's where you can handle how the test will run 
 
 _Shazam!_
  
