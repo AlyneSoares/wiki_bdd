@@ -4,16 +4,16 @@ let _instance;
 
 const Environment = {
 
-  TEST: 'test',
-  STAGE: 'stage',
-  PROD: 'prod',
+  Google: 'google',
+  Googlebr: 'googlebr',
+  Googleau: 'googleau',
 
   getInstance: function() {
     if(_instance){
       return _instance;
     }
     _instance = this;
-    this.setEnvironment(this.TEST);
+    this.setEnvironment(this.Google);
   },
 
   setEnvironment: function(env) {
@@ -48,4 +48,3 @@ const Environment = {
 Environment.getInstance();
 
 module.exports = _instance;
-

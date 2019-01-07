@@ -4,7 +4,7 @@ const base64Img = require('base64-img');
 const env = require('./environment').getInstance();
 
 function CustomWorld({attach, parameters}) {
-    env.setEnvironment(parameters.env || env.TEST);
+    env.setEnvironment(parameters.env || env.Google);
     this.waitForTestController = testControllerHolder.get()
         .then(function(tc) {
             return testController = tc;
