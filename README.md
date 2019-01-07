@@ -1,4 +1,4 @@
-# LOGICALIS BDD (Tescafe & Cucumber integration)
+# Automation Test Written with BDD (Tescafe & Cucumber integration)
 
  This regression test is based in [TestCafé](https://github.com/DevExpress/testcafe) with [CucumberJS](https://github.com/cucumber/cucumber-js).
 
@@ -52,8 +52,7 @@ to learn how it works, make sure you have testcafe and cucumber installed.
  > `$ npm install -g cucumber`
  
    * Validate Cucumber version:
-   > `$ cucumber -v`
-   
+   > `$ cucumber -v`   
 
 _Shazam!_
  
