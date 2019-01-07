@@ -3,20 +3,20 @@ const createTestCafe = require('testcafe');
 const testControllerHolder = require('../support/testControllerHolder');
 const {AfterAll, setDefaultTimeout, Before, After, Status} = require('cucumber');
 const errorHandling = require('../support/errorHandling');
+const envConfig = require('../../env.json');
+
 var reporter = require('cucumber-html-reporter');
-
-const TIMEOUT = 40000;
-
 let isTestCafeError = false;
-let attachScreenshotToReport = null;
+let attachScreenshotToReport = true;
 let cafeRunner = null;
-let n = 0;
+
+setDefaultTimeout(40000);
 
 function createTestFile() {
     fs.writeFileSync('test.js',
         'import errorHandling from "./features/support/errorHandling.js";\n' +
         'import testControllerHolder from "./features/support/testControllerHolder.js";\n\n' +
-        
+
         'fixture("fixture")\n' +
         '.httpAuth({username: "admin", password: "admin"})\n' +
         'test\n' +
@@ -24,16 +24,17 @@ function createTestFile() {
         '.after(async t => {await errorHandling.ifErrorTakeScreenshot(t)})');
 }
 
-function runTest(iteration, browser) {
-    createTestCafe('localhost', 1338 + iteration, 1339 + iteration)
+function runTest(options) {
+    var port = undefined;
+    createTestCafe('localhost', port , port)
         .then(function(tc) {
             cafeRunner = tc;
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
                 .screenshots('reports/screenshots/', true)
-                .browsers(browser)
-                .run()
+                .browsers(options.browser)
+                .run(options)
                 .catch(function(error) {
                     console.error(error);
                 });
@@ -43,19 +44,19 @@ function runTest(iteration, browser) {
 }
 
 
-setDefaultTimeout(TIMEOUT);
-
-Before(function() {
-    runTest(n, this.setBrowser());
+Before(function(testCase) {
+    var blue = '\033[0;34m', nc = '\033[0m', bold = '\033[1m';
+    var date = new Date();
+    console.log(`\n${blue}${bold}run scenario:${nc} ${testCase.pickle.name}${nc} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+    setDefaultTimeout(this.setTimeout());
+    runTest(this.setOptions());
     createTestFile();
-    n += 2;
     return this.waitForTestController.then(function(testController) {
         return testController.maximizeWindow();
     });
 });
 
 After(function() {
-    fs.unlinkSync('test.js');
     testControllerHolder.free();
 });
 

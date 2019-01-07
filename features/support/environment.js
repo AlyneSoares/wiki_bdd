@@ -1,5 +1,5 @@
 const {ClientFunction} = require('testcafe');
-
+const envConfig = require('../../env.json');
 let _instance;
 
 const Environment = {
@@ -18,32 +18,17 @@ const Environment = {
 
   setEnvironment: function(env) {
     _instance.environmentInUse = env;
-
-    switch(env) {
-      case this.TEST:
-        _instance.url = 'https://www.google.com/';
-        _instance.user = ' m';
-        _instance.password = '1 ';
-      break;
-
-      case this.STAGE:
-        _instance.url = 'https://www. .com/';
-        _instance.user = ' ';
-        _instance.password = '124124124';
-      break;
-
-      case this.PROD:
-      break;
-
-    }
+    _instance.url = envConfig.environment[env].url;
+    _instance.user = envConfig.environment[env].user;
+    _instance.password = envConfig.environment[env].password;
   },
 
-  getEnvironment: function() { 
-    return _instance.environmentInUse; 
+  getEnvironment: function() {
+    return _instance.environmentInUse;
   },
 
-  getUrl: function() { 
-    return _instance.url; 
+  getUrl: function() {
+    return _instance.url;
   },
 
   getPageUrl: function(testController) {
@@ -51,12 +36,12 @@ const Environment = {
     return getPageUrl();
   },
 
-  getUser: function() { 
-    return _instance.user; 
+  getUser: function() {
+    return _instance.user;
   },
-  
-  getPassword: function() { 
-    return _instance.password; 
+
+  getPassword: function() {
+    return _instance.password;
   }
 };
 
