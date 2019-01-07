@@ -56,6 +56,7 @@ to learn how it works, make sure you have testcafe and cucumber installed.
 
 **5) Install Cucumber**
 * You must edit the environment.js to the desired URL, users and password config.
+* You also must edit index.js to config or delet as you wish (29 const allowedEnvironments = ['google', 'googlebr', 'googleau'];)
 
 _Shazam!_
  
