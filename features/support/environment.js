@@ -1,46 +1,43 @@
-const {ClientFunction} = require('testcafe');
+const { ClientFunction } = require('testcafe');
 const envConfig = require('../../env.json');
 let _instance;
 
 const Environment = {
+  Default: 'default',
 
-  Google: 'google',
-  Googlebr: 'googlebr',
-  Googleau: 'googleau',
-
-  getInstance: function() {
-    if(_instance){
+  getInstance: function () {
+    if (_instance) {
       return _instance;
     }
     _instance = this;
-    this.setEnvironment(this.Google);
+    this.setEnvironment(this.Default);
   },
 
-  setEnvironment: function(env) {
+  setEnvironment: function (env) {
     _instance.environmentInUse = env;
     _instance.url = envConfig.environment[env].url;
     _instance.user = envConfig.environment[env].user;
     _instance.password = envConfig.environment[env].password;
   },
 
-  getEnvironment: function() {
+  getEnvironment: function () {
     return _instance.environmentInUse;
   },
 
-  getUrl: function() {
+  getUrl: function () {
     return _instance.url;
   },
 
-  getPageUrl: function(testController) {
-    const getPageUrl = ClientFunction(() => window.location.href).with({boundTestRun: testController});
+  getPageUrl: function (testController) {
+    const getPageUrl = ClientFunction(() => window.location.href).with({ boundTestRun: testController });
     return getPageUrl();
   },
 
-  getUser: function() {
+  getUser: function () {
     return _instance.user;
   },
 
-  getPassword: function() {
+  getPassword: function () {
     return _instance.password;
   }
 };

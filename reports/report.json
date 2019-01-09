@@ -1,18 +1,18 @@
 [
   {
-    "description": "  I want to search for PRODUCTS and add to my cart",
+    "description": "    I want to search and confirm thepage title",
     "keyword": "Feature",
-    "name": "Cart - elements confirmations and functions",
+    "name": "Search for Metallica",
     "line": 1,
-    "id": "cart---elements-confirmations-and-functions",
+    "id": "search-for-metallica",
     "tags": [],
-    "uri": "features/cart.feature",
+    "uri": "features/searchMetallica.feature",
     "elements": [
       {
-        "id": "cart---elements-confirmations-and-functions;i-change-a-product-quantity-by-typing",
+        "id": "search-for-metallica;search-for-metallica",
         "keyword": "Scenario",
-        "line": 94,
-        "name": "I change a product quantity by typing",
+        "line": 4,
+        "name": "Search for Metallica",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -24,212 +24,46 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6781000000
+              "duration": 6987000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "I open the OCC page",
+            "name": "I open the page",
             "match": {
               "location": "features/step_definitions/login.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 14825000000
+              "duration": 12650000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 6,
-            "name": "I type my user email",
-            "match": {
-              "location": "features/step_definitions/login.js:11"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3815000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "I type my password",
-            "match": {
-              "location": "features/step_definitions/login.js:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1245000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "I click the \"submitLoginButton\"",
+            "name": "I click the \"banner\"",
             "match": {
               "location": "features/step_definitions/generalSteps.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 1646000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 9,
-            "name": "I wait \"8\" seconds",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 8025000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 10,
-            "name": "I have no products in my cart",
-            "match": {
-              "location": "features/step_definitions/searchAndAddToCart.js:15"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3906000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 11,
-            "name": "I have a product in my cart",
-            "match": {
-              "location": "features/step_definitions/searchAndAddToCart.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 12709000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "I click the \"expandMiniCartIcon\"",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 838000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "I wait \"4\" seconds",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4025000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 14,
-            "name": "I click the \"viewCartButton\"",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3179000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 15,
-            "name": "I wait \"4\" seconds",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:27"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4003000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 95,
-            "name": "I click the \"productQuantityInCart\"",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:7"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 15000000,
-              "error_message": "TypeError: selectors[keySelector] is not a function\n    at CustomWorld.<anonymous> (/home/objectedge/git/logicalis/tests/regression/features/step_definitions/generalSteps.js:9:54)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 96,
-            "name": "I press the \"backspace\" key",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:38"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 97,
-            "name": "I type \"5\" in the \"productQuantityInCart\"",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:22"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 98,
-            "name": "I click the \"productPriceInCart\"",
-            "match": {
-              "location": "features/step_definitions/generalSteps.js:7"
-            },
-            "result": {
-              "status": "skipped"
+              "duration": 1104000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 99,
-            "name": "I should see \"5\" in the \"productQuantityInCart\"",
+            "line": 7,
+            "name": "I should see \"http://cancerdemama.com.br/campanha/\" in the url",
             "match": {
-              "location": "features/step_definitions/generalSteps.js:53"
+              "location": "features/step_definitions/generalSteps.js:45"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 139000000
             }
           },
           {
@@ -240,7 +74,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8000000
+              "duration": 3000000
             }
           },
           {
@@ -251,7 +85,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 2000000
             }
           }
         ]

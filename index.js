@@ -10,7 +10,7 @@ const fs = require('fs');
 
 
 let browser = environmentSettings.browser || 'chrome';
-let environment = environmentSettings.defaultEnvironment || 'google';
+let environment = environmentSettings.defaultEnvironment || 'default';
 let reportsFolder = path.join(__dirname, 'reports');
 let reportFile = path.join(__dirname, 'reports', 'report.json');
 let features = '';
@@ -26,7 +26,7 @@ let debugMode = environmentSettings.debugMode || false;
 let parallel = null;
 
 const allowesdOptions = ['_', 'b', 'browser', 'h', 'headless', 'e', 'env', 's', 'speed', 't', 'timeout','help', 'v', 'verbose', 'p', 'parallel'];
-const allowedEnvironments = ['google', 'googlebr', 'googleau'];
+const allowedEnvironments = ['default', 'google'];
 const allowedBrowsers = ['chrome', 'ie', 'edge', 'firefox', 'opera', 'safari'];
 const headlessBrowsers = ['chrome', 'firefox'];
 
@@ -140,7 +140,7 @@ commandExec.on('exit', function (code) {
     }
   };
 
-  reporter.generate(options, function(e){
-    fs.unlinkSync('test.js');
-  });
+  // reporter.generate(options, function(e){
+  //   fs.unlinkSync('test.js');
+  // });
 });

@@ -4,8 +4,8 @@ const hooks = require('../support/hooks');
 const { selectors } = require('../support/selectors');
 
 //Login Step by Step
-Given('I open the Google page', async function () {
-    this.consoleToReport('Given', 'I open the Google page');
+Given('I open the page', async function () {
+    this.consoleToReport('Given', 'I open the page');
     await testController.navigateTo(env.getUrl()).wait(10000);
 });
 When('I type my user email', async function () {
