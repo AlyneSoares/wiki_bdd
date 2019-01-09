@@ -24,7 +24,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6987000000
+              "duration": 13384000000
             }
           },
           {
@@ -37,55 +37,81 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12650000000
+              "duration": 14295000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 6,
-            "name": "I click the \"banner\"",
+            "name": "I type \"Metallica wiki\" in the \"searchBoxGoogle\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1542000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I click the \"searchButtonGoogle\"",
             "match": {
               "location": "features/step_definitions/generalSteps.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 1104000000
+              "duration": 988000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click the \"searchResult\"",
+            "match": {
+              "location": "features/step_definitions/generalSteps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6254000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
-            "name": "I should see \"http://cancerdemama.com.br/campanha/\" in the url",
+            "line": 9,
+            "name": "I should see \"Metallica\" in the \"pageTitle\"",
             "match": {
-              "location": "features/step_definitions/generalSteps.js:45"
+              "location": "features/step_definitions/generalSteps.js:53"
             },
             "result": {
               "status": "passed",
-              "duration": 139000000
+              "duration": 3311000000
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:63"
+              "location": "features/support/hooks.js:74"
             },
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 5000000
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:59"
+              "location": "features/support/hooks.js:64"
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 24000000
             }
           }
         ]

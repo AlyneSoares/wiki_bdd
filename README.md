@@ -1,4 +1,4 @@
-# Automation Test Written with BDD (Tescafe & Cucumber integration)
+# LOGICALIS BDD (Tescafe & Cucumber integration)
 
  This regression test is based in [TestCafé](https://github.com/DevExpress/testcafe) with [CucumberJS](https://github.com/cucumber/cucumber-js).
 
@@ -52,12 +52,49 @@ to learn how it works, make sure you have testcafe and cucumber installed.
  > `$ npm install -g cucumber`
  
    * Validate Cucumber version:
-   > `$ cucumber -v`   
+   > `$ cucumber -v`
 
-**5) Configure Environment**
-* You must edit the environment.js to the desired URL, users and password config.
-* You also must edit index.js to config or delete as you wish the line 29: `const allowedEnvironments = ['google', 'googlebr', 'googleau'];)`
-* You also must configure the file env.json; that's where you can handle how the test will run 
+
+**5) Adjust the environment**
+* You have to edit `env.json` with the information of url you want to navigate and, if needed, user and password.
+
+
+* Go to `environment.js` and change the url and it's names according to your needs:
+```
+const Environment = {
+  
+  DEFAULT: 'default',
+  WIKI: 'wiki',
+
+  getInstance: function() {
+    if(_instance){
+      return _instance;
+    }
+    _instance = this;
+    this.setEnvironment(this.DEFAULT);
+  },
+
+  ``` 
+* Go to `package.json` to edit name and authors
+
+* In `index.js` be aware of changing:
+```
+let environment = environmentSettings.defaultEnvironment || 'default';
+```
+and
+
+```
+const allowedEnvironments = ['default', 'wiki'];
+```
+* Finally, the `world.js` function
+```
+function CustomWorld({attach, parameters}) {
+    env.setEnvironment(parameters.env || env.DEFAULT);
+    this.waitForTestController = testControllerHolder.get()
+        .then(function(tc) {
+            return testController = tc;
+        });
+```
 
 _Shazam!_
  

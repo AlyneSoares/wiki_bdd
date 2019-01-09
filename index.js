@@ -23,10 +23,13 @@ let pageLoadTimeout =  environmentSettings.pageLoadTimeout || 10000;
 let assertionTimeout =  environmentSettings.assertionTimeout || 5000;
 let selectorTimeout =  environmentSettings.selectorTimeout || 10000;
 let debugMode = environmentSettings.debugMode || false;
+let developerMode = environmentSettings.developer || false;
+
+let port = undefined;
 let parallel = null;
 
-const allowesdOptions = ['_', 'b', 'browser', 'h', 'headless', 'e', 'env', 's', 'speed', 't', 'timeout','help', 'v', 'verbose', 'p', 'parallel'];
-const allowedEnvironments = ['default', 'google'];
+const allowesdOptions = ['_', 'b', 'browser', 'h', 'headless', 'e', 'env', 's', 'speed', 't', 'timeout','help', 'v', 'verbose', 'port', 'p', 'parallel'];
+const allowedEnvironments = ['default', 'wiki'];
 const allowedBrowsers = ['chrome', 'ie', 'edge', 'firefox', 'opera', 'safari'];
 const headlessBrowsers = ['chrome', 'firefox'];
 
@@ -81,8 +84,14 @@ if(args.hasOwnProperty('v') || args.hasOwnProperty('verbose')){
   verbose = true;
 }
 
-if(args.hasOwnProperty('p') || args.hasOwnProperty('parallel')){
-  parallel = args.p || args.parallel;
+if(args.hasOwnProperty('port')){
+  port = args.port;
+}
+
+if(developerMode){
+  if(args.hasOwnProperty('p') || args.hasOwnProperty('parallel')){
+    parallel = args.p || args.parallel;
+  }
 }
 
 if (!allowedEnvironments.includes(environment)) {
@@ -103,6 +112,7 @@ const params = {
   assertionTimeout,
   selectorTimeout,
   debugMode,
+  port,
   variables: environmentSettings.environment[environment].variables
 };
 var optionsCommand = [
@@ -140,7 +150,6 @@ commandExec.on('exit', function (code) {
     }
   };
 
-  // reporter.generate(options, function(e){
-  //   fs.unlinkSync('test.js');
-  // });
+  reporter.generate(options);
 });
+

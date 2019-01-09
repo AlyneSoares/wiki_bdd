@@ -4,13 +4,14 @@ const base64Img = require('base64-img');
 const env = require('./environment').getInstance();
 
 function CustomWorld({attach, parameters}) {
-    env.setEnvironment(parameters.env || env.Google);
+    env.setEnvironment(parameters.env || env.DEFAULT);
     this.waitForTestController = testControllerHolder.get()
         .then(function(tc) {
             return testController = tc;
         });
 
     this.attach = attach;
+    this.verbose = parameters.verbose;
 
     this.setBrowser = function() {
         if (parameters.browser === undefined) {
@@ -20,29 +21,28 @@ function CustomWorld({attach, parameters}) {
         }
     };
 
-    this.setOptions = function(){
-      var  options = {};
-        options.browser = parameters.browser;
-        options.speed = parameters.speed;
-        options.timeout = parameters.timeout
-        options.stopOnFirstFail = parameters.stopOnFirstFail;
-        options.pageLoadTimeout = parameters.pageLoadTimeout;
-        options.assertionTimeout = parameters.assertionTimeout;
-        options.selectorTimeout = parameters.selectorTimeout;
-        if(parameters.debugMode){
-          options.debugMode = parameters.debugMode;
-        }
+    this.getOptions = function(){
+      var options = {};
+      options.speed = parameters.speed;
+      options.stopOnFirstFail = parameters.stopOnFirstFail;
+      options.pageLoadTimeout = parameters.pageLoadTimeout;
+      options.assertionTimeout = parameters.assertionTimeout;
+      options.selectorTimeout = parameters.selectorTimeout;
+      if(parameters.debugMode){
+        options.debugMode = parameters.debugMode;
+      }
+      return options;
+    }
+    this.getSettings = function(){
+      var settings = {};
+      settings.port1 = parameters.port;
+      settings.port2 = parameters.port +1;
+      settings.browser = parameters.browser;
+      settings.timeout = parameters.timeout
 
-        return options;
+      return settings;
     }
 
-    this.setSpeed = function() {
-      if (parameters.speed === undefined) {
-          return 1;
-      } else {
-          return parameters.speed;
-      }
-    };
     this.setTimeout = function(){
       if(parameters.debugMode){
         return 60*1000;

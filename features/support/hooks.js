@@ -9,7 +9,8 @@ var reporter = require('cucumber-html-reporter');
 let isTestCafeError = false;
 let attachScreenshotToReport = true;
 let cafeRunner = null;
-
+let n = 0;
+let scenarioCounter = 1;
 setDefaultTimeout(40000);
 
 function createTestFile() {
@@ -24,16 +25,15 @@ function createTestFile() {
         '.after(async t => {await errorHandling.ifErrorTakeScreenshot(t)})');
 }
 
-function runTest(options) {
-    var port = undefined;
-    createTestCafe('localhost', port , port)
+function runTest(options,{port1,port2,browser},iteration) {
+    createTestCafe('localhost', port1  + iteration, port2 + iteration)
         .then(function(tc) {
             cafeRunner = tc;
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
                 .screenshots('reports/screenshots/', true)
-                .browsers(options.browser)
+                .browsers(browser)
                 .run(options)
                 .catch(function(error) {
                     console.error(error);
@@ -45,12 +45,17 @@ function runTest(options) {
 
 
 Before(function(testCase) {
-    var blue = '\033[0;34m', nc = '\033[0m', bold = '\033[1m';
-    var date = new Date();
-    console.log(`\n${blue}${bold}run scenario:${nc} ${testCase.pickle.name}${nc} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+
+    if(this.verbose){
+      var blue = '\033[0;34m',yellow = '\033[0;93m', nc = '\033[0m', bold = '\033[1m';
+      var date = new Date();
+      console.log(`\n${blue}${bold}run scenario: (${yellow}${scenarioCounter}${blue})${nc}${testCase.pickle.name}${nc} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+      scenarioCounter++;
+    }
     setDefaultTimeout(this.setTimeout());
-    runTest(this.setOptions());
+    runTest(this.getOptions(), this.getSettings(), n);
     createTestFile();
+    n++
     return this.waitForTestController.then(function(testController) {
         return testController.maximizeWindow();
     });
@@ -58,6 +63,12 @@ Before(function(testCase) {
 
 After(function() {
     testControllerHolder.free();
+    try {
+      if (fs.existsSync('test.js')) {
+        fs.unlinkSync('test.js');
+      }
+    } catch(err) {
+    }
 });
 
 After(function(testCase) {
