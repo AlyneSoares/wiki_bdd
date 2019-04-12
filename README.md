@@ -1,4 +1,4 @@
-# MOTOROLA BDD (Tescafe & Cucumber integration)
+# BDD Test Sample(Tescafe & Cucumber integration)
 
  This regression test is based in [TestCafé](https://github.com/DevExpress/testcafe) with [CucumberJS](https://github.com/cucumber/cucumber-js).
 
@@ -54,8 +54,6 @@ to learn how it works, make sure you have testcafe and cucumber installed.
    * Validate Cucumber version:
    > `$ cucumber -v`
    
-You can see a full project with more features, pages and steps in the first OE BDD test, in [Logicalis](https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression) regression tests.
-
 I strongly recomend extensions (if you're using VScode) like  "vscode-icons", to better visualization os different files and "Cucumber (Gherkin) Full Support", to better usage os the language and enable the steps auto-complete in the settings.
 
 _Shazam!_
