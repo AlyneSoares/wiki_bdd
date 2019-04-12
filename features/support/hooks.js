@@ -5,7 +5,6 @@ const {AfterAll, setDefaultTimeout, Before, After, Status} = require('cucumber')
 const errorHandling = require('../support/errorHandling');
 const envConfig = require('../../env.json');
 
-var reporter = require('cucumber-html-reporter');
 let isTestCafeError = false;
 let attachScreenshotToReport = true;
 let cafeRunner = null;
@@ -30,6 +29,7 @@ function runTest(options,{port1,port2,browser},iteration) {
         .then(function(tc) {
             cafeRunner = tc;
             const runner = tc.createRunner();
+
             return runner
                 .src('./test.js')
                 .screenshots('reports/screenshots/', true)
@@ -84,7 +84,7 @@ AfterAll(function() {
     let intervalId = null;
 
     function waitForTestCafe() {
-        intervalId = setInterval(checkLastResponse, 500);
+        intervalId = setInterval(checkLastResponse, 100);
     }
 
     function checkLastResponse() {

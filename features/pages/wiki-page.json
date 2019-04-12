@@ -1,0 +1,7 @@
+{
+"searchBox":"#searchInput",
+"pageTitle":"#firstHeading",
+"searchButton":".pure-button",
+"changeLanguage":"#js-link-box-en",
+"welcomeMessage":"#mp-topbanner > div > div:nth-child(1)"
+}

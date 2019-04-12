@@ -39,7 +39,6 @@ Then('I should see the text in {string}', async function (keySelector) {
 Then('I should check the text in {string} is correct', async function (keySelector) { 
     this.consoleToReport('Then', ' I validate comparisonString in the {string}', keySelector); 
     comparisonString = await selectors[keySelector]().innerText; 
-    this.consoleToReport('comparison element text', comparisonString); 
-    await testController.expect(comparisonString).eql(initialString);
+    await testController.expect(initialString).contains(comparisonString);
     await this.addScreenshotToReport();
  });

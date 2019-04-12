@@ -4,7 +4,7 @@ const base64Img = require('base64-img');
 const env = require('./environment').getInstance();
 
 function CustomWorld({attach, parameters}) {
-    env.setEnvironment(parameters.env || env.DEFAULT);
+    env.setEnvironment(parameters.env || env.TEST);
     this.waitForTestController = testControllerHolder.get()
         .then(function(tc) {
             return testController = tc;
@@ -21,16 +21,18 @@ function CustomWorld({attach, parameters}) {
         }
     };
 
+    this.selectors =  parameters.selectors;
     this.getOptions = function(){
       var options = {};
+
       options.speed = parameters.speed;
       options.stopOnFirstFail = parameters.stopOnFirstFail;
       options.pageLoadTimeout = parameters.pageLoadTimeout;
       options.assertionTimeout = parameters.assertionTimeout;
       options.selectorTimeout = parameters.selectorTimeout;
-      if(parameters.debugMode){
-        options.debugMode = parameters.debugMode;
-      }
+      options.skipJsErrors = parameters.skipJsErrors;
+      options.skipUncaughtErrors = parameters.skipUncaughtErrors;
+
       return options;
     }
     this.getSettings = function(){
@@ -65,10 +67,15 @@ function CustomWorld({attach, parameters}) {
                     console.warn('The screenshot was not attached to the report');
                 });
         } else {
+
             return new Promise((resolve) => {
+
                 resolve(null);
+
             });
+
         }
+
     };
 
     this.attachScreenshotToReport = function(pathToScreenshot) {
@@ -83,7 +90,6 @@ function CustomWorld({attach, parameters}) {
         string.map(function(text){
           testCase = testCase.replace(/({string})/,`"${text}"`);
         });
-
         console.log(`\n${blue}${bold}run steps: ${nc} ${yellow} [${type.toUpperCase()}]  ${nc} ${testCase}`);
       }
   }

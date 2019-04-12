@@ -3,16 +3,17 @@ const envConfig = require('../../env.json');
 let _instance;
 
 const Environment = {
-  
-  DEFAULT: 'default',
-  WIKI: 'wiki',
+
+  TEST: 'test',
+  STAGE: 'stage',
+  PROD: 'prod',
 
   getInstance: function() {
     if(_instance){
       return _instance;
     }
     _instance = this;
-    this.setEnvironment(this.DEFAULT);
+    this.setEnvironment(this.TEST);
   },
 
   setEnvironment: function(env) {
@@ -47,4 +48,3 @@ const Environment = {
 Environment.getInstance();
 
 module.exports = _instance;
-

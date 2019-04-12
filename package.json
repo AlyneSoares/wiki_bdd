@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression"
+    "url": "https://github.com/AlyneSoares/wiki_bdd"
   },
   "scripts": {
     "debug": "node --inspect=1337 --debug-brk --nolazy node_modules/cucumber/bin/cucumber-js --tags @debug --format json:./reports/report.json",
@@ -18,13 +18,14 @@
   "dependencies": {
     "base64-img": "^1.0.4",
     "cucumber": "5.1.0",
-    "cucumber-html-reporter": "4.0.4",
     "eslint": "^4.19.1",
     "fs": "0.0.1-security",
     "minimist": "1.2.0",
+    "moment": "^2.24.0",
+    "multiple-cucumber-html-reporter": "^1.11.6",
     "npm": "^6.0.0",
     "path": "0.12.7",
-    "testcafe": "^0.22.0",
+    "testcafe": "0.22.0",
     "util": "0.11.1"
   },
   "devDependencies": {

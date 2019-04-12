@@ -1,4 +1,4 @@
-# LOGICALIS BDD (Tescafe & Cucumber integration)
+# MOTOROLA BDD (Tescafe & Cucumber integration)
 
  This regression test is based in [TestCafé](https://github.com/DevExpress/testcafe) with [CucumberJS](https://github.com/cucumber/cucumber-js).
 
@@ -53,48 +53,10 @@ to learn how it works, make sure you have testcafe and cucumber installed.
  
    * Validate Cucumber version:
    > `$ cucumber -v`
+   
+You can see a full project with more features, pages and steps in the first OE BDD test, in [Logicalis](https://github.com/intelimen/logicalis/tree/tests_bdd/tests/regression) regression tests.
 
-
-**5) Adjust the environment**
-* You have to edit `env.json` with the information of url you want to navigate and, if needed, user and password.
-
-
-* Go to `environment.js` and change the url and it's names according to your needs:
-```
-const Environment = {
-  
-  DEFAULT: 'default',
-  WIKI: 'wiki',
-
-  getInstance: function() {
-    if(_instance){
-      return _instance;
-    }
-    _instance = this;
-    this.setEnvironment(this.DEFAULT);
-  },
-
-  ``` 
-* Go to `package.json` to edit name and authors
-
-* In `index.js` be aware of changing:
-```
-let environment = environmentSettings.defaultEnvironment || 'default';
-```
-and
-
-```
-const allowedEnvironments = ['default', 'wiki'];
-```
-* Finally, the `world.js` function
-```
-function CustomWorld({attach, parameters}) {
-    env.setEnvironment(parameters.env || env.DEFAULT);
-    this.waitForTestController = testControllerHolder.get()
-        .then(function(tc) {
-            return testController = tc;
-        });
-```
+I strongly recomend extensions (if you're using VScode) like  "vscode-icons", to better visualization os different files and "Cucumber (Gherkin) Full Support", to better usage os the language and enable the steps auto-complete in the settings.
 
 _Shazam!_
  
@@ -127,7 +89,8 @@ The files **".features"** you will save the scenarios and test cases.
      - -b or --browser, to chose the browser (eg `--browser=firefox`)
      - -s or --speed, to change the test speed between 0.1 and 1 (slower to faster) (eg `--speed=0.3`)
      - -t or --timeout, to change deafult 400000 miliseconds (eg `-timeout=10000`)
-     - to run specific feature, use chosenFeature.feature (eg. `login.feature` )   
+     - to run specific feature, use chosenFeature.feature (eg. `login.feature` )  
+     - to run specific scenario, use chosenFeature.feature:XX XX = the code line of the scenario (eg: `login.feature:44`) 
      - awalys start with `$ npm test --`
   
   Example:
