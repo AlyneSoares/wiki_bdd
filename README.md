@@ -4,7 +4,7 @@
 
 ## How to Code the tests
  
- A smaller model with files and folders organization pre-determined is disposable [here](https://github.com/AlyneSoares/wiki_bdd), as it's presented, you only need to fill the gaps of information and especification of your own project, like selector and features.
+ A small model with files and folders organization pre-determined is disposable [here](https://github.com/AlyneSoares/wiki_bdd), as it's presented, you only need to fill the gaps of information and especification of your own project, like selector and features.
 
 # BDD AUTOMATION TEST
 
