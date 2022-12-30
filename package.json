@@ -25,7 +25,7 @@
     "multiple-cucumber-html-reporter": "^1.11.6",
     "npm": "^6.14.6",
     "path": "0.12.7",
-    "testcafe": "0.22.0",
+    "testcafe": "2.2.0",
     "util": "0.11.1"
   },
   "devDependencies": {
